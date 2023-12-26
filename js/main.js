@@ -7,8 +7,6 @@ var existEmail = document.getElementById("existEmail");
 var loginEmailInput =document.getElementById("loginEmailInput");
 var loginPasswordInput =document.getElementById("loginPasswordInput");
 var signUpBtn = document.getElementById("signUpBtn")
-
-signUpBtn.addEventListener("click",addUser)
 var users =[]
 if(localStorage.getItem("users")!= null)
 {
@@ -16,6 +14,7 @@ if(localStorage.getItem("users")!= null)
 }
 
 // SIGN UP START
+
 function addUser(){
             if(validForm() ==true || validateEmail() == false)
             {
