@@ -1,0 +1,63 @@
+.home{
+    height: 100vh;
+    background-color: bisque;
+    position: relative;
+    overflow: hidden;
+}
+.home::after{
+    content: "";
+    position: absolute;
+    background-color: #2B1C18;
+    width: 50%;
+    height: 100%;
+    top: 0;
+    right: 0;
+    z-index: 1;
+    transform: skew(45deg);
+}
+
+.logo h2{
+    color: white;
+    font-size: 20px;
+    
+}
+.logout-btn{
+    background-color: #512A1C;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-weight: 500;
+    width: 100%;
+}
+.navbar{
+    background-color: #2B1C18;
+    box-shadow: 0px 0px 20px 0px black;
+    z-index: 999;
+    position: relative;
+}
+.content{
+    position: relative;
+    top: 40%;
+    z-index: 99;
+}
+.welcome-msg{
+    font-size: 30px;
+    padding: 40px 0;
+    color: bisque;
+}
+.content-para{
+    border-radius: 10px;
+    box-shadow: 0px 0px 20px 0px black;
+    color: white;
+    padding: 10px 0;
+    background-color: #623F34;
+}
+.logout-btn:hover{
+    background-color: #623F34;
+}
+.navbar-toggler{
+    background-color: white;
+
+}
+ 
