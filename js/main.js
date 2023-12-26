@@ -92,8 +92,6 @@ function validForm(){
 
 // LOG IN START
 var logInfo = document.getElementById("log-info"); 
-var signInBtn = document.getElementById("signInBtn")
-signInBtn.addEventListener("click",userLog)
 function userLog(){
 
     for(var i =0 ; i<users.length;i++)
