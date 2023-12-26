@@ -57,7 +57,7 @@ function validateEmail(){
         }
 }
 function validForm(){
-    regexName =/^\w{3,15}\s?(\w{3,15})*$/gi
+    regexName =/^\w{3,15}\s*(\w{3,15})*\s*(\w{3,15})*$/gi
     regexEmail =/^\w{3,15}@[a-z]{3,}.[a-z]{3}$/gi
     regexPassword=/^[0-9]{3,}|\w{3,}$/gi
 
