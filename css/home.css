@@ -63,7 +63,7 @@
 }
 .moves-up{
     
-    background-color: #2B1C18;
+    background-color: #FFE4C4;
     position: absolute;
     z-index:999 ;
     animation: movesup 1s ease-in-out;
@@ -81,11 +81,10 @@
         bottom: 100%;
         right: 0;
     }
-
 }
 .moves-down {
     
-    background-color: #2B1C18;
+    background-color: #FFE4C4;
     position: absolute;
     z-index:999 ;
     animation: movesdown 1s ease-in-out ;

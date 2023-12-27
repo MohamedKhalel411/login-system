@@ -46,3 +46,26 @@
 .mail{
     padding-left: 35px;
 }
+.moves-up{
+    background-image:linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)),url(../images/overlay-bg.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: absolute;
+    z-index:999 ;
+    animation: movesup 1s ease;
+}
+@keyframes movesup {
+    0%{
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    }
+    100%{
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 100%;
+    }
+}

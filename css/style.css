@@ -189,3 +189,46 @@ body{
 .logout-btn:hover{
     background-color: #623F34;
 }
+.moves-up{
+    
+    background-color: #F7ECDE;
+    position: absolute;
+    z-index:999 ;
+    animation: movesup 1s ease-in-out;
+}
+@keyframes movesup {
+    0%{
+    top: 0;
+    left: 0;
+    bottom: 50%;
+    right: 0;
+    }
+    100%{
+        top: 0;
+        left: 0;
+        bottom: 100%;
+        right: 0;
+    }
+
+}
+.moves-down {
+    
+    background-color: #F7ECDE;
+    position: absolute;
+    z-index:999 ;
+    animation: movesdown 1s ease-in-out ;
+}
+@keyframes movesdown {
+    0%{
+        top: 50%;
+        left: 0;
+        bottom: 0;
+        right: 0;
+    }
+    100%{
+        top: 100%;
+        left: 0;
+        bottom: 0;
+        right: 0;
+    }
+}

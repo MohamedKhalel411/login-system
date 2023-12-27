@@ -1,61 +1,61 @@
-var signupNameInput =document.getElementById("signupNameInput");
-var signupEmailInput =document.getElementById("signupEmailInput");
-var signupPasswordInput =document.getElementById("signupPasswordInput");
-var msgalert = document.getElementById("msg-alert");    
-var msgSuccess = document.getElementById("msg-success");    
+var signupNameInput = document.getElementById("signupNameInput");
+var signupEmailInput = document.getElementById("signupEmailInput");
+var signupPasswordInput = document.getElementById("signupPasswordInput");
+var msgalert = document.getElementById("msg-alert");
+var msgSuccess = document.getElementById("msg-success");
 var existEmail = document.getElementById("existEmail");
-var loginEmailInput =document.getElementById("loginEmailInput");
-var loginPasswordInput =document.getElementById("loginPasswordInput");
-var signUpBtn = document.getElementById("signUpBtn")
-var users =[]
-if(localStorage.getItem("users")!= null)
-{
-    users = JSON.parse(localStorage.getItem("users"))
+var loginEmailInput = document.getElementById("loginEmailInput");
+var loginPasswordInput = document.getElementById("loginPasswordInput");
+var signUpBtn = document.getElementById("signUpBtn");
+var users = [];
+
+if (localStorage.getItem("users") != null) {
+    users = JSON.parse(localStorage.getItem("users"));
+}
+
+function isEmailExists(email) {
+    for (var i = 0; i < users.length; i++) {
+    if (users[i].email.toLowerCase() === email.toLowerCase()) {
+      return true; // Email exists
+    }
+    }
+  return false; // Email doesn't exist
 }
 
 // SIGN UP START
+function addUser() {
+    if (validForm() == true) {
+        var userEmail = signupEmailInput.value;
+        if (isEmailExists(userEmail)) {
+            existEmail.classList.replace("d-none", "d-block");
+            return;
+        }
+        else{
+            existEmail.classList.replace("d-block", "d-none");
+            msgSuccess.classList.replace("d-none","d-block")
 
-function addUser(){
-            if(validForm() ==true || validateEmail() == false)
-            {
-                var user={
-                    name :signupNameInput.value,
-                    email:signupEmailInput.value,
-                    password:signupPasswordInput.value
-                }
-                users.push(user)
-                localStorage.setItem("users",JSON.stringify(users))
-                clearForm();
-            }
-            else{
-                msgalert.classList.replace("d-none","d-block")
-                msgSuccess.classList.replace("d-block","d-none")
-            }
+        }
+        var user = {
+            name: signupNameInput.value,
+            email: userEmail,
+            password: signupPasswordInput.value
+        };
+        users.push(user);
+        localStorage.setItem("users", JSON.stringify(users));
+        clearForm();
+    } else {
+        msgalert.classList.replace("d-none", "d-block");
+        msgSuccess.classList.replace("d-block", "d-none");
+    }
 }
+
+
 function clearForm(){
     signupNameInput.value ="";
     signupEmailInput.value="";
     signupPasswordInput.value="";
 }
-function validateEmail(){
-    for(var i =0;i<users.length;i++)
-        {   if(localStorage.getItem("users")!= null)
-            {
-                if(signupEmailInput.value == users[i].email)
-                {
-                    existEmail.classList.replace("d-none","d-block")
-                    return true
-                }
-                else{
-                    existEmail.classList.replace("d-block","d-none")
-                }
-            }
-            else{
-                existEmail.classList.replace("d-block","d-none")
-                return false
-            }
-        }
-}
+
 function validForm(){
     regexName =/^\w{3,15}\s*(\w{3,15})*\s*(\w{3,15})*$/gi
     regexEmail =/^\w{3,15}@[a-z]{3,}.[a-z]{3}$/gi
@@ -73,7 +73,6 @@ function validForm(){
         msgSuccess.classList.replace("d-block","d-none")
         return false;
     }
-
     if( regexPassword.test(signupPasswordInput.value)  == false)
     {
         msgalert.classList.replace("d-none","d-block")
@@ -81,7 +80,6 @@ function validForm(){
         return false;
     }
     else{
-        msgSuccess.classList.replace("d-none","d-block")
         msgalert.classList.replace("d-block","d-none")
         return true
     }
@@ -100,25 +98,23 @@ function userLog(){
         {
             logInfo.classList.replace("d-block","d-none")
             msgalert.classList.replace("d-block","d-none")
+            msgSuccess.classList.replace("d-none","d-block")
             window.location.href="home.html"
         }
-        else if(loginEmailInput.value != "" || loginPasswordInput.value != "")
+        
+        else if(loginEmailInput.value == ""||loginPasswordInput.value =="")
         {
+            msgalert.classList.replace("d-none","d-block")
+            logInfo.classList.replace("d-block","d-none")
+        }
+        else if(loginEmailInput.value != ""||loginPasswordInput.value !=""){
+            msgalert.classList.replace("d-block","d-none")
             logInfo.classList.replace("d-none","d-block")
         }
-    }
-    isEmptyLog()
-}
-
-function isEmptyLog(){
-    if(loginEmailInput.value == ""||loginPasswordInput.value =="")
-    {
-        msgalert.classList.replace("d-none","d-block")
-        logInfo.classList.replace("d-block","d-none")
-
-    }
-    else{
-        msgalert.classList.replace("d-block","d-none")
+        else{
+            msgSuccess.classList.replace("d-none","d-block")
+            logInfo.classList.replace("d-block","d-none")
+        }
     }
 }
 
