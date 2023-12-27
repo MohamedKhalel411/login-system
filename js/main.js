@@ -96,7 +96,7 @@ function userLog(){
 
     for(var i =0 ; i<users.length;i++)
     {
-        if(users[i].email== loginEmailInput.value&& users[i].password== loginPasswordInput.value)
+        if(users[i].email.toLowerCase()== loginEmailInput.value.toLowerCase()&& users[i].password== loginPasswordInput.value)
         {
             logInfo.classList.replace("d-block","d-none")
             msgalert.classList.replace("d-block","d-none")

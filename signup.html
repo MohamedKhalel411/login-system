@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign up</title>
-    <link rel="icon" href="images/log.png" type="image/x-icon">
+    <link rel="icon" href="images/add-user.png" type="image/x-icon">
     <link rel="stylesheet" href="css/all.min.css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/signup.css">
@@ -14,19 +14,22 @@
         <div class="  vh-100 d-flex justify-content-center align-items-center">
             <div class="  m-auto p-5 signup-form">
                 <h2 class="text-center mb-5 signup-title">Smart login system</h2>
-                <div class="mb-4">
+                <div class="mb-4 position-relative">
+                    <i class="fa-solid fa-user position-absolute evelope"></i>
                     <label class="mb-1"  for="signupNameInput">Name</label>
-                    <input required class="form-control " type="text" placeholder="Enter Your Name" id="signupNameInput">
+                    <input required class="form-control mail " type="text" placeholder="Enter Your Name" id="signupNameInput">
                 </div>
-                <div class="mb-4">
+                <div class="mb-4 position-relative">
+                    <i class="fa-solid  position-absolute evelope fa-envelope"></i>
                     <label class="mb-1"  for="signupEmailInput">Email</label>
-                    <input oninput="validateEmail(this.value)" required class="form-control " type="email" placeholder="Enter Your Email" id="signupEmailInput">
+                    <input oninput="validateEmail(this.value)" required class="form-control mail " type="email" placeholder="Enter Your Email" id="signupEmailInput">
                 <p id="existEmail" class="msg-alert  d-none">Email Already Exist</p>
 
                 </div>
-                <div class="mb-4">
+                <div class="mb-4 position-relative">
+                    <i class="fa-solid fa-lock position-absolute evelope "></i>
                     <label class="mb-1"  for="signupPasswordInput">Password</label>
-                    <input required class="form-control " type="password" placeholder="Enter Your Password" id="signupPasswordInput">
+                    <input required class="form-control mail" type="password" placeholder="Enter Your Password" id="signupPasswordInput">
                 </div>
                 <p id="msg-alert" class="text-center  d-none msg-alert">All inputs are required</p>
                 <p id="msg-success" class="text-center msg-success d-none   text-success">Success</p>

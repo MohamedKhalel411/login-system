@@ -16,9 +16,10 @@
     transform: skew(45deg);
 }
 
-.logo h2{
+
+.logo{
     color: white;
-    font-size: 20px;
+    font-size: 25px !important;
     
 }
 .logout-btn{
@@ -29,6 +30,7 @@
     border-radius: 10px;
     font-weight: 500;
     width: 100%;
+    margin-bottom: 5px;
 }
 .navbar{
     background-color: #2B1C18;
@@ -58,6 +60,47 @@
 }
 .navbar-toggler{
     background-color: white;
+}
+.moves-up{
+    
+    background-color: #2B1C18;
+    position: absolute;
+    z-index:999 ;
+    animation: movesup 1s ease-in-out;
+}
+@keyframes movesup {
+    0%{
+    top: 0;
+    left: 0;
+    bottom: 50%;
+    right: 0;
+    }
+    100%{
+        top: 0;
+        left: 0;
+        bottom: 100%;
+        right: 0;
+    }
 
 }
- 
+.moves-down {
+    
+    background-color: #2B1C18;
+    position: absolute;
+    z-index:999 ;
+    animation: movesdown 1s ease-in-out ;
+}
+@keyframes movesdown {
+    0%{
+        top: 50%;
+        left: 0;
+        bottom: 0;
+        right: 0;
+    }
+    100%{
+        top: 100%;
+        left: 0;
+        bottom: 0;
+        right: 0;
+    }
+}
