@@ -179,15 +179,16 @@ body{
     }
 }
 .logout-btn{
-    background-color: #512A1C;
+    background-color: #d1512d;
     color: white;
     border: none;
     padding: 10px 20px;
     border-radius: 10px;
-    font-weight: 500;
+    font-weight: 700;
+
 }
 .logout-btn:hover{
-    background-color: #623F34;
+    background-color: #BB4120;
 }
 .moves-up{
     
